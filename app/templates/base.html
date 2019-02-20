@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>{{ title }} | Blog Project</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+		<link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico')}}">
+	</head>
+	<body>
+		<header class="container">
+			<nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+						<a class="navbar-brand" href="{{ url_for('home.homepage') }}">Blog Project</a>
+					</div>
+					<div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent"> 
+						<ul class="nav navbar-nav">
+							{% if current_user.is_authenticated %}
+								{% if current_user.is_admin %}
+									<li class="nav-item">
+										<a class="nav-link" href="{{ url_for('home.admin_dashboard') }}">Dashboard
+											<span class="sr-only">(current)</span>
+										</a>
+									</li>
+									<li class="nav-item"><a class="nav-link" href="{{ url_for('admin.show_posts') }}">Posts</a></li>
+									<li class="nav-item"><a class="nav-link" href="{{ url_for('admin.list_roles') }}">Roles</a></li>
+									<li class="nav-item"><a class="nav-link" href="{{ url_for('admin.view_bloggers') }}">Bloggers</a></li>
+								{% else %}
+								<li class="nav-item">
+									<a class="nav-link" href="{{ url_for('home.dashboard') }}">Dashboard
+										<span class="sr-only">(current)</span>
+									</a>
+								</li>
+								{% endif %}
+								<li>
+									<a class="nav-link" href="{{ url_for('auth.logout') }}">Logout</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" style="color:red"><i class="fa fa-user">{{ current_user.username }}.</i></a>
+								</li>
+
+							{% else %}
+								<li class="nav-item">
+									<a class="nav-link" href="{{ url_for('home.homepage') }}">Home
+										<span class="sr-only">(current)</span>
+									</a>
+								</li>
+								<li>
+									<a class="nav-link" href="{{ url_for('auth.login') }}">Sign In</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="{{ url_for('auth.register') }}">Sign Up</a>
+								</li>
+							{% endif %}
+						</ul> 
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<div class="main">
+			{% block body %}
+			{% endblock %}
+			<div class="push"></div>
+		</div>
+
+		<footer class="container">
+			
+		</footer>
+
+
+		
+
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script> -->
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+	</body>
+</html>

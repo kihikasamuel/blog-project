@@ -1,0 +1,20 @@
+{% import "bootstrap/wtf.html" as wtf %}
+{% extends 'base.html' %}
+{% block title %}Edit Posts{% endblock %}
+{% block body %}
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="text-center">
+					{% if add_roles %}
+						<h1>Add Roles</h6>
+					{% else %}
+						<h1>Edit Roles</h1>
+					{% endif %}
+					<br/>
+					{{ wtf.quick_form(form) }}
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

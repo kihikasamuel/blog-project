@@ -1,0 +1,54 @@
+body{
+	color:#00f700;
+	background-color: #cfcfcf;
+	background-size: cover;
+}
+
+.navbar-dark .navbar-nav .nav-link, 
+.navbar-dark .navbar-header .navbar-brand{
+	color: #67c8ff;
+}
+
+/*@include media-breakpoint-up(sm){
+	.main{
+		width: 100%;
+		height: 100%;
+		overflow-x: hidden;
+	}
+}*/
+
+/*only inside the base file*/
+.main{
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -4em;
+	margin-top: 65px;
+}
+/**/
+/*.col-ls-12{
+	padding: 40px auto;
+}*/
+/*content center inside home/index*/
+
+.content-center{
+	padding-top: 50px;
+    padding-bottom: 50px;
+	color: #67c8ff;
+	text-align: center;
+	font-size: 12px;
+	background: url('../img/penguin.jpg') no-repeat center center;
+	background-size: cover;
+	height: 368px;
+}
+
+.intro-message h3, h5{
+	text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+	padding: 40px auto;
+	align-content: center;
+}
+.intro-divider{
+	width: 400px;
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
