@@ -1,6 +1,5 @@
 *.pyc
 instance/
-migrations/
 venv/
 config.py
 notes.txt
