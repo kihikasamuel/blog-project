@@ -2,7 +2,7 @@ from flask import abort, flash, redirect, render_template, url_for
 from flask_login import current_user, login_required
 
 from . import admin
-from forms import AssignBloggersForm, BloggerStatusForm, PostForm, RoleForm
+from forms import AssignRolesForm, BloggerStatusForm, PostForm, RoleForm
 from .. import db
 from ..models import Blogger, Post, Role
 
@@ -105,15 +105,16 @@ def add_roles():
 						name=form.name.data,
 						description=form.description.data
 			)
-
 		try:
 			db.session.add(role)
 			db.session.commit()
 			flash('Role added successfully!')
 		except:
 			flash('Error: Role name already exist!')
+			
 
 		return redirect(url_for('admin.list_roles'))
+
 
 	return render_template('admin/roles/role.html', action='Add', add_roles=add_roles, form=form, title='Add Roles')
 
@@ -233,14 +234,13 @@ def assign_roles(id):
 	if blogger.is_admin:
 		abort(403)
 
-	#
-	form = AssignBloggersForm(obj=blogger)
+	form = AssignRolesForm(obj=blogger)
 	if form.validate_on_submit():
-		blogger.role = form.role.data
+		role = form.role.data
 		db.session.add(blogger)
 		db.session.commit()
 		
-		flash('Assigned role to %s' % str(blogger.username))
+		flash('Assigned a role to %s' % str(blogger.username))
 		return redirect(url_for('admin.view_bloggers'))
 
 	return render_template('admin/bloggers/assignRole.html', form=form, blogger=blogger, title='Assign Roles')

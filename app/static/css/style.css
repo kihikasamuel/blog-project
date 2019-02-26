@@ -18,20 +18,28 @@ body{
 }*/
 
 /*only inside the base file*/
-.main{
+.shelter-content{
 	min-height: 100%;
 	height: auto !important;
 	height: 100%;
 	margin: 0 auto -4em;
 	margin-top: 65px;
 }
-/**/
-/*.col-ls-12{
-	padding: 40px auto;
-}*/
+
+/*clickables*/
+.btn{
+	border:solid #000;
+	color:#67c8ff;
+}
+
+/*error pages*/
+.error-body{
+	margin-top: 50px;
+}
+
 /*content center inside home/index*/
 
-.content-center{
+.top-col{
 	padding-top: 50px;
     padding-bottom: 50px;
 	color: #67c8ff;
@@ -40,6 +48,9 @@ body{
 	background: url('../img/penguin.jpg') no-repeat center center;
 	background-size: cover;
 	height: 368px;
+	box-shadow: -10px -10px 70px #0f0f0f;
+	border-radius: 10px;
+	margin-bottom: 50px;
 }
 
 .intro-message h3, h5{
@@ -48,7 +59,24 @@ body{
 	align-content: center;
 }
 .intro-divider{
-	width: 400px;
+	width: inherit;
     border-top: 1px solid #f8f8f8;
     border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+/*on the homepage*/
+a .link-to-post{
+	color: #67c8ff;
+	padding: 10px;
+}
+
+.post-pre-empt{
+	color: #000000;
+	padding: 20px;
+}
+
+/*the first post*/
+.post-1:first-child{
+	/*margin-top: 30px;*/
+	color: red;
 }

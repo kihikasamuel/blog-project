@@ -33,9 +33,9 @@ class BloggerStatusForm(FlaskForm):
 
 
 
-class AssignBloggersForm(FlaskForm):
+class AssignRolesForm(FlaskForm):
 	"""
 	Assign roles to bloggers
 	"""
-	role = QuerySelectField(query_factory=lambda:Role.query.all(), get_label='name')
+	role = QuerySelectField(query_factory=lambda: Role.query.all(), get_label='name')
 	submit = SubmitField('Assign Role')

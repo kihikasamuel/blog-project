@@ -1,5 +1,5 @@
 # third party imports
-from flask 				import Flask
+from flask 				import Flask, render_template
 from flask_bootstrap	import Bootstrap
 from flask_sqlalchemy 	import SQLAlchemy
 from flask_login 		import LoginManager
@@ -37,10 +37,22 @@ def create_app(config_name):
 	from .auth import auth as auth_blueprint
 	app.register_blueprint(auth_blueprint)
 
-	# from .bloggers import blog_user as user_blueprint
-	# app.register_blueprint(user_blueprint)
+	from .bloggers import blog_user as user_blueprint
+	app.register_blueprint(user_blueprint)
 
 	from .home import home as home_blueprint
 	app.register_blueprint(home_blueprint)
+
+	@app.errorhandler(403)
+	def error_403_forbidden(error):
+		return render_template('errors/403.html', title='Forbidden'), 403
+
+	@app.errorhandler(404)
+	def error_404_not_found(error):
+		return render_template('errors/404.html', title='Not Found'), 404
+
+	app.errorhandler(500)
+	def error_500_server_err(error):
+		return render_template('errors/500.html', title='Server Error'), 500
 
 	return app

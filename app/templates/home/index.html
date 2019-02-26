@@ -2,17 +2,68 @@
 {% block title %}Home{% endblock %}
 
 {% block body %}
-	<div class="content-center">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="intro-message">
-						<h3>Blog Project</h3>
-						<h5>A platform for bloggers to express their story!</h5>
-						<hr class="intro-divider">
-					</div>
-				</div>
+	
+	<!-- begin display row -->
+	<div class="row">
+		<div class="col-lg-12 top-col" style="border-spacing: 100px;">
+			<div class="intro-message">
+				<h3>Blog Project</h3>
+				<h5>A platform for bloggers to express their story!</h5>
+				<hr class="intro-divider">
 			</div>
 		</div>
 	</div>
+	<!-- end of row -->
+
+	<!--- begin title rows-->
+	{% if posts %}
+		{% for post in posts %}
+		<div class="row post-1">
+			<div class="col-lg-8">
+				<div class="head-title">
+					<h4>
+						<a href="#" class="link-to-post">
+							{{ post.title }}
+						</a>
+					</h4>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				
+			</div>
+		</div>
+		<!-- end row -->
+
+		<!-- start post body row -->
+		<div class="row">
+			<div class="col-lg-8">
+				<div class="post-pre-empt">
+					{{ post.post_body[0:100] }}...
+					<hr>
+					<br/>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				
+			</div>
+		</div>
+		<!-- end row -->
+
+		{% endfor %}
+	{% else %}
+		<!-- alternative row for posts -->
+		<div class="row align-items-center">
+			<div class="col-lg-12">
+				<div class="text-center">
+					<br/>
+					<h4>No posts</h4>
+					<hr class="intro-divider">
+				</div>
+			</div>
+		</div>
+
+	{% endif %}
+
+	</div>
+
 {% endblock %}

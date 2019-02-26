@@ -32,11 +32,17 @@
 									<li class="nav-item"><a class="nav-link" href="{{ url_for('admin.list_roles') }}">Roles</a></li>
 									<li class="nav-item"><a class="nav-link" href="{{ url_for('admin.view_bloggers') }}">Bloggers</a></li>
 								{% else %}
+								
 								<li class="nav-item">
 									<a class="nav-link" href="{{ url_for('home.dashboard') }}">Dashboard
 										<span class="sr-only">(current)</span>
 									</a>
 								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="{{ url_for('blog_user.add_post') }}">Add blog posts
+									</a>
+								</li>
+
 								{% endif %}
 								<li>
 									<a class="nav-link" href="{{ url_for('auth.logout') }}">Logout</a>
@@ -64,7 +70,7 @@
 			</nav>
 		</header>
 
-		<div class="main">
+		<div class="container shelter-content">
 			{% block body %}
 			{% endblock %}
 			<div class="push"></div>

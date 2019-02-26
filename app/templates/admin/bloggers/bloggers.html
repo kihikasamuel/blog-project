@@ -25,7 +25,7 @@
 									<th scope="col">Post Count</th>
 									<th scope="col">Status</th>
 									<th scope="col">Role</th>
-									<th scope="col">Edit</th>
+									<th scope="col">Assign</th>
 									<th scope="col">Delete</th>
 								</tr>
 							</thead>
@@ -68,10 +68,10 @@
 										{% endif %}
 									</td>
 									<td>
-										{% if blogger.role %}
-											{{ blogger.role.name }}
+										{% if blogger.roles %}
+											{{ blogger.roles.name }}
 										{% else %}
-											-
+											--
 										{% endif %}
 									</td>
 									<td>

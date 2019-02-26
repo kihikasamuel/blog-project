@@ -35,8 +35,8 @@
 									{{ post.post_body }}
 								</td>
 								<td>
-									{% if blogger.post %}
-										{{ blogger.post.author_id }}
+									{% if post.blogger %}
+										{{ post.blogger.username }}
 									{% else %}
 										None
 									{% endif %}
@@ -50,7 +50,7 @@
 									</a>
 								</td>
 								<td>
-									<a href="{{ url_for('amin.delete_posts', id=post.id) }}">
+									<a href="{{ url_for('admin.delete_posts', id=post.id) }}">
 										<i class="fa fa-trash"></i>
 									</a>
 								</td>
