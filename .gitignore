@@ -1,5 +1,4 @@
 *.pyc
 instance/
 venv/
-config.py
 notes.txt
