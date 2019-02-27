@@ -4,11 +4,11 @@ from sqlalchemy import engine_from_config, pool
 from logging.config import fileConfig
 import logging
 
-<<<<<<< HEAD
+# <<<<<<< HEAD
 # this is the Alembic Config object, which provides hh
-=======
+# =======
 # this is the Alembic Config object, which provides dggd
->>>>>>> origin/master
+# >>>>>>> origin/master
 # access to the values within the .ini file in use.
 config = context.config
 
