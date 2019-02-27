@@ -5,7 +5,7 @@ from logging.config import fileConfig
 import logging
 
 <<<<<<< HEAD
-# this is the Alembic Config object, which provides h
+# this is the Alembic Config object, which provides hh
 =======
 # this is the Alembic Config object, which provides dggd
 >>>>>>> origin/master
