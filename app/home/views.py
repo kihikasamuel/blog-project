@@ -3,7 +3,7 @@ from flask_login import login_required, current_user
 
 from . import home
 
-@home.route('/homes')
+@home.route('/')
 def homepage():
 	"""
 	template to be rendered
@@ -11,7 +11,7 @@ def homepage():
 	return render_template('home/index.html', title='Welcome')
 
 @home.route('/dashboard')
-@login_required
+# @login_required
 def dashboard():
 	"""
 	template to render
