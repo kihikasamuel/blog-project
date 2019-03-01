@@ -11,7 +11,7 @@ def homepage():
 	return render_template('home/index.html', title='Welcome')
 
 @home.route('/dashboard')
-# @login_required
+@login_required
 def dashboard():
 	"""
 	template to render
