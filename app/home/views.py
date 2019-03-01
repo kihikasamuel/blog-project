@@ -3,7 +3,7 @@ from flask_login import login_required, current_user
 
 from . import home
 
-@home.route('/')
+@home.route('/homes')
 def homepage():
 	"""
 	template to be rendered
