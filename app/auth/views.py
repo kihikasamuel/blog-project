@@ -42,8 +42,7 @@ def login():
 	if form.validate_on_submit():
 		blogger = Blogger.query.filter_by(email=form.email.data).first()
 
-		if blogger is not None: 
-			# and blogger.verify_password(form.password.data):
+		if blogger is not None and blogger.verify_password(form.password.data):
 			# login user and redirect
 			login_user(blogger)
 
