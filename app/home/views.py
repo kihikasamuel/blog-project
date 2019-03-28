@@ -16,7 +16,7 @@ def dashboard():
 	"""
 	template to render
 	"""
-	return render_template('home/dashboard.html', title='Dashboard')
+	return render_template('home/index.html', title='Dashboard')
 
 @home.route('/admin/dashboard')
 @login_required
