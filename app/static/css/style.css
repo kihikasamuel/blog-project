@@ -48,7 +48,7 @@ body{
 	background: url('../img/penguin.jpg') no-repeat center center;
 	background-size: cover;
 	height: 368px;
-	box-shadow: -10px -10px 70px #0f0f0f;
+	box-shadow: -6px -60px 70px #0f0f0f;
 	border-radius: 10px;
 	margin-bottom: 50px;
 }
