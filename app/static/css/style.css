@@ -67,6 +67,8 @@ body{
 /*on the homepage*/
 a .link-to-post{
 	color: #67c8ff;
+	font-family: Tahoma, serif;
+	font-stretch: 1px;
 	padding: 10px;
 }
 
