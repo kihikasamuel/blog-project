@@ -19,6 +19,7 @@ class ProductionConfig(Config):
 	Configs for production env
 	"""
 	DEBUG = False
+	SQLALCHEMY_ECHO = False
 
 class TestingConfig(Config):
 	"""
