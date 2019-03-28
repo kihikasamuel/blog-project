@@ -70,6 +70,7 @@ a > .link-to-post{
 	font-family: Tahoma, serif;
 	font-stretch: 1px;
 	padding: 10px;
+	text-decoration: none;
 }
 
 .post-pre-empt{
