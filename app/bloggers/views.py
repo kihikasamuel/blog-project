@@ -59,4 +59,5 @@ def give_data():
 	"""
 	posts = Post.query.all()
 
-	return jsonify('posts':{'title': title, 'body': post_body})
+	# return jsonify('posts':{'title': title, 'body': post_body})
+	return render_template('home/index.html', posts=posts, title="All Posts")
