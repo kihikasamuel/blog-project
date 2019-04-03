@@ -1,4 +1,4 @@
-from flask import abort, flash, redirect, render_template, url_for
+from flask import abort, flash, redirect, render_template, url_for, jsonify
 from flask_login import current_user, login_required
 
 from . import blog_user
@@ -48,3 +48,15 @@ def add_post():
 		# return redirect('blog_user.add_post')
 
 	return render_template('bloguser/posts.html', add_post=add_post, form=form, title='Posts')
+
+
+
+# web service testing
+@blog_user.route('/service/web', methods=['GET'])
+def view_posts():
+	"""
+	View all posts here
+	"""
+	posts = Post.query.all()
+
+	return jsonify('posts':{'title': title, 'body': post_body})
