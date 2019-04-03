@@ -52,12 +52,12 @@ def add_post():
 
 
 # web service testing
-@blog_user.route('/service/web', methods=['GET'])
+@blog_user.route('/service/web', methods=['GET', "POST"])
 def give_data():
 	"""
 	View all posts here
 	"""
 	posts = Post.query.all()
 
-	# return jsonify('posts':{'title': title, 'body': post_body})
+	return jsonify('posts':{'title': title, 'body': post_body})
 	return render_template('home/index.html', posts=posts, title="All Posts")
