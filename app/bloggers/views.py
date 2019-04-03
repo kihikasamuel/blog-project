@@ -53,7 +53,7 @@ def add_post():
 
 # web service testing
 @blog_user.route('/service/web', methods=['GET'])
-def view_posts():
+def give_data():
 	"""
 	View all posts here
 	"""
