@@ -5,6 +5,7 @@ from flask_bootstrap	import Bootstrap
 from flask_sqlalchemy 	import SQLAlchemy
 from flask_login 		import LoginManager
 from flask_migrate		import Migrate
+from flask_json import FlaskJSON, JsonError, json_response, as_json
 
 # import from local files
 from config import app_config
@@ -30,6 +31,7 @@ def create_app(config_name):
 
 	Bootstrap(app)
 	db.init_app(app)
+	FlaskJSON(app)
 
 	# init login_manager, set login_manager message and set loginpath
 	login_manager.init_app(app)
