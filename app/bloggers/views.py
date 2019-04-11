@@ -54,7 +54,7 @@ def add_post():
 
 # web service testing
 @blog_user.route('/service/web', methods=['GET', "POST"])
-@as_json
+# @as_json
 def give_data():
 	"""
 	View all posts here
