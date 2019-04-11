@@ -31,7 +31,7 @@ def create_app(config_name):
 
 	Bootstrap(app)
 	db.init_app(app)
-	FlaskJSON(app)
+	# FlaskJSON(app)
 
 	# init login_manager, set login_manager message and set loginpath
 	login_manager.init_app(app)
