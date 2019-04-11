@@ -4,7 +4,7 @@ from flask_login import current_user, login_required
 
 from . import blog_user
 from forms import PostForm
-from .. import db, json
+from .. import db
 from ..models import Post
 
 def check_status():
