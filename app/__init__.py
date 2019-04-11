@@ -5,7 +5,7 @@ from flask_bootstrap	import Bootstrap
 from flask_sqlalchemy 	import SQLAlchemy
 from flask_login 		import LoginManager
 from flask_migrate		import Migrate
-from flask_json import FlaskJSON, JsonError, json_response, as_json
+# from flask_json import FlaskJSON, JsonError, json_response, as_json
 
 # import from local files
 from config import app_config
