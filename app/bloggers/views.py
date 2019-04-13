@@ -1,5 +1,4 @@
-from flask import abort, flash, redirect, render_template, url_for
-# from flask_json import FlaskJSON, JsonError, json_response, as_json
+from flask import abort, flash, redirect, render_template, url_for, jsonify
 from flask_login import current_user, login_required
 
 from . import blog_user
@@ -53,14 +52,11 @@ def add_post():
 
 
 # web service testing
-@blog_user.route('/service/web', methods=['GET', "POST"])
-# @as_json
+@blog_user.route('/service/web')
 def give_data():
 	"""
 	View all posts here
 	"""
 	posts = Post.query.all()
 
-	return dict(title=title,body=post_body)
-	
-	return render_template('home/index.html', posts=posts, title="All Posts")
+	return jsonify(posts)
