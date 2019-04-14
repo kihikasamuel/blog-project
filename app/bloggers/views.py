@@ -59,6 +59,4 @@ def give_data():
 	"""
 	posts = Post.query.all()
 
-	result = post_schema.dump(posts)
-
-	return jsonify(result.data)
+	return jsonify(posts)
