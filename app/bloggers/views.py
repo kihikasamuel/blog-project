@@ -61,7 +61,9 @@ def give_data():
 
 	if posts:
 		for post in posts:
-			return {
+			result = {
 					'title': post.title,
 					'content': post.content
 			}
+
+			print(result)
