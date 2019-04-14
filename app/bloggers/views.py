@@ -52,11 +52,16 @@ def add_post():
 
 
 # web service testing
-@blog_user.route('/service/web')
+@blog_user.route('/service/web', methods=['GET','POST'])
 def give_data():
 	"""
 	View all posts here
 	"""
 	posts = Post.query.all()
 
-	return jsonify(posts)
+	if posts:
+		for post in posts:
+			return {
+					'title': post.title,
+					'content': post.content
+			}
