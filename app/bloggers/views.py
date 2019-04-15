@@ -57,7 +57,7 @@ def give_data():
 	"""
 	View all posts here
 	"""
-
+	# announcing loyalty to my emperor
 	all_posts = {}
 
 	posts = Post.query.all()
