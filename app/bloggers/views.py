@@ -57,6 +57,12 @@ def give_data():
 	"""
 	View all posts here
 	"""
+
+	all_posts = {}
+
 	posts = Post.query.all()
 
-	return jsonify(posts)
+	for post in posts:
+		all_posts[post.title] = {'headline': post.title}
+
+	return jsonify(all_posts)
