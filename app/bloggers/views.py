@@ -63,10 +63,6 @@ def give_data():
 	posts = Post.query.all()
 
 	for post in posts:
-			all_posts[post.id] = {'posts': {[
-											'headline': post.title, 
-												'content': post.body,
-											]}
-								}
+		all_posts[post.id] = {'headline': post.title, 'cont': post.post_body}
 
 	return jsonify(all_posts)
