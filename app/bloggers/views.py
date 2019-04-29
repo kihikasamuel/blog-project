@@ -1,4 +1,4 @@
-from flask import abort, flash, redirect, render_template, url_for, jsonify
+from flask import abort, flash, redirect, render_template, request, url_for, jsonify
 from flask_login import current_user, login_required
 
 from . import blog_user
@@ -66,3 +66,10 @@ def give_data():
 		all_posts[post.id] = {'headline': post.title, 'cont': post.post_body}
 
 	return jsonify(all_posts)
+
+
+
+	@blog_user('/service/entry', methods=['GET','POST'])
+	def read_data():
+		username = request.args.get('name')
+		return '''Your username is : {}'''.format(username)
