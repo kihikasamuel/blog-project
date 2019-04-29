@@ -1,4 +1,4 @@
-from flask import abort, flash, redirect, render_template, request, url_for, jsonify
+from flask import abort, flash, redirect, render_template, request, url_for, jsonify, json
 from flask_login import current_user, login_required
 
 from . import blog_user
@@ -56,8 +56,9 @@ def add_post():
 def give_data():
 	"""
 	View all posts here
+
+	announcing loyalty to my emperor
 	"""
-	# announcing loyalty to my emperor
 	all_posts = {}
 
 	posts = Post.query.all()
@@ -71,5 +72,11 @@ def give_data():
 
 	@blog_user('/service/entry')
 	def read_data():
-		username = request.args.get('name')
-		print( '''Your username is : {}'''.format(username) )
+		"""
+		"""
+		jsondata = request.get_json();
+		data = json.loads(jsondata)
+		# username = request.args.get('username')
+
+		# return ( '''Your username is : {}'''.format(username) )
+		return json.dump(data)
