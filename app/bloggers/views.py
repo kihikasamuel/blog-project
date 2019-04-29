@@ -69,7 +69,7 @@ def give_data():
 
 
 
-	@blog_user('/service/entry', methods=['GET','POST'])
+	@blog_user('/service/entry')
 	def read_data():
 		username = request.args.get('name')
-		return '''Your username is : {}'''.format(username)
+		print( '''Your username is : {}'''.format(username) )
