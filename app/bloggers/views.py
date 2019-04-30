@@ -74,9 +74,9 @@ def give_data():
 	def read_data():
 		"""
 		"""
-		jsondata = request.get_json();
-		data = json.loads(jsondata)
+		jsondata = request.data
+		# data = json.loads(jsondata)
 		# username = request.args.get('username')
 
 		# return ( '''Your username is : {}'''.format(username) )
-		return json.dump(data)
+		return var_dump(data)
