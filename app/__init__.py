@@ -6,6 +6,7 @@ from flask_sqlalchemy 	import SQLAlchemy
 from flask_login 		import LoginManager
 from flask_migrate		import Migrate
 # from flask_json import FlaskJSON, JsonError, json_response, as_json
+import africastalking
 
 # import from local files
 from config import app_config
@@ -13,6 +14,8 @@ from config import app_config
 db = SQLAlchemy()
 
 login_manager = LoginManager()
+
+africas = africastalking()
 
 # create app
 def create_app(config_name):
@@ -32,6 +35,8 @@ def create_app(config_name):
 	Bootstrap(app)
 	db.init_app(app)
 	# FlaskJSON(app)
+	africas.init_app(app)
+
 
 	# init login_manager, set login_manager message and set loginpath
 	login_manager.init_app(app)

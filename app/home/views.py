@@ -2,9 +2,9 @@ from __future__ import print_function
 from flask import abort, render_template, jsonify
 from flask_login import login_required, current_user
 
-import africastalking
 
 from . import home
+from . import africas
 
 # ============================================================
 @home.route('/')
@@ -12,8 +12,8 @@ def call():
 	username = "sandbox"
 	api_key = ""
 
-	africastalking.initialize(username,api_key)
-	voice = africastalking.Voice
+	africas.initialize(username,api_key)
+	voice = africas.Voice
 
 	call_from = "+254719166938"
 	call_to = ["+254710701117"]
@@ -24,6 +24,9 @@ def call():
 		print(result)
 	except Exception as e:
 		print ("Encountered an error while making the call:%s" %str(e))
+
+
+	return render_template('home/index.html', title='Welcome')
 
 
 
