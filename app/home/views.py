@@ -2,18 +2,20 @@ from __future__ import print_function
 from flask import abort, render_template, jsonify
 from flask_login import login_required, current_user
 
+import africastalking
+
 
 from . import home
-from . import africas
+# from . import africas
 
 # ============================================================
 @home.route('/')
 def call():
-	username = "sandbox"
-	api_key = ""
+	username = "Sandbox"
+	api_key = "9d34d528b0ccec922b16a70c0b4ec6bffd48a34088668b5d2ea2757827737105"
 
-	africas.initialize(username,api_key)
-	voice = africas.Voice
+	africastalking.initialize(username,api_key)
+	voice = africastalking.Voice
 
 	call_from = "+254719166938"
 	call_to = ["+254710701117"]
