@@ -1,7 +1,10 @@
-# blog-project - Hosted on https://techieplace.pythonanywhere.com/register
+Edit, publish your blogs - Hosted here 👉 <a href="https://techieplace.pythonanywhere.com/register">techieplace</a>
+
+Built with Python Flask Framework
 
 A simple crude blog application.
-Has Sign up and Sign in
+
+Has Sign-up and Sign-in
 
 Dashboard
 Once you sign up - await approval from the admin
